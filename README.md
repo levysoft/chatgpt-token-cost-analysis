@@ -11,7 +11,7 @@ This repository contains a Python script for analyzing the costs associated with
 
 1. Clone this repository:
     ```sh
-    git clone https://github.com/your_username/repository_name.git
+    git clone https://github.com/levysoft/chatgpt-token-cost-analysis.git
     ```
 2. Install the required packages:
     ```sh
@@ -23,7 +23,7 @@ This repository contains a Python script for analyzing the costs associated with
 1. Place your `chat_export.json` file in the main directory of the project.
 2. Run the script:
     ```sh
-    python script.py
+    python chatgpt_analyze_token_costs.py
     ```
 
 ## Script Description
