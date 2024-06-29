@@ -89,6 +89,34 @@ Costs per month:
 1   2023-01    0.094950     1.419300         18990          94620  1.514250
 0   2022-12    0.054870     1.562010         10974         104134  1.616880
 ```
+## Web-Based Token Cost Analyzer
+
+In addition to the Python script, I've created a single-page HTML + JavaScript application that allows anyone to analyze token costs locally. This HTML page does not use the `tiktoken` library, which is unavailable in JavaScript, but rather utilizes the `gpt-tokenizer` library.
+
+### Why the HTML Page?
+
+- **Accessibility**: This HTML page can be downloaded and run locally by anyone without needing to set up a Python environment.
+- **Comprehensive Model Support**: Unlike the Python script, the HTML page includes support for multiple models with varying token costs, allowing for more flexible analysis.
+- **Local Privacy**: The page ensures the privacy of your sensitive data because it works entirely locally. Your JSON file containing private chats is never uploaded to a remote server.
+
+### Using the HTML Page
+
+1. **Download the Page**: Click the download link on the page to save it for offline use.
+2. **Select the Model**: Choose the appropriate model from the dropdown menu.
+3. **Upload Your JSON File**: Select your `chat_export.json` file to analyze.
+4. **View Results**: The analysis results, including total and monthly costs, will be displayed directly on the page.
+
+This web-based tool provides a more user-friendly and comprehensive way to analyze token costs for various models and use cases.
+
+### Screenshot
+
+Here is a screenshot of the web page:
+
+![Web Page Screenshot](screenshot1.jpg)
+
+Make sure to download the page and use it offline for maximum privacy and security.
+
+![Web Page Screenshot](screenshot2.jpg)
 
 ## Author
 
