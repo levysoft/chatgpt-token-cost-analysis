@@ -9,7 +9,7 @@ cost_per_million_output_tokens = 15.00
 
 # Load the JSON file with exception handling
 try:
-    with open('chat_export.json', 'r') as file:
+    with open('conversations.json', 'r') as file:
         chat_data = json.load(file)
     print("JSON file successfully loaded.")
 except Exception as e:
