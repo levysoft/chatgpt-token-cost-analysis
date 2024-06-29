@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OpenAI Chat Cost Analyzer</title>
+    <script src="https://unpkg.com/gpt-tokenizer"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Arial, sans-serif', sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background-color: #f5f5f5;
+            color: #333;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .checkbox-container {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        
+        .checkbox-container input[type="checkbox"] {
+            margin-right: 10px;
+            width: auto;
+            margin-top: 0;
+            margin-bottom: 0;
+            vertical-align: middle;
+        }
+        
+        .checkbox-container label {
+            margin-bottom: 0;
+            display: flex;
+            align-items: center;
+            font-size: 16px;
+            line-height: 1;
+        }
+
+        #results:empty, #debug:empty {
+            display: none;
+        }
+        
+        #results, #debug {
+            margin-top: 30px;
+            padding: 20px;
+            background-color: #ecf0f1;
+            border-radius: 4px;
+        }
+        
+        h1, h2, h3 {
+            color: #2c3e50;
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        select, input[type="file"], input[type="checkbox"] {
+            margin-bottom: 20px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        #loadingMessage {
+            display: none;
+            color: #3498db;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        #results, #debug {
+            margin-top: 30px;
+            padding: 20px;
+            background-color: #ecf0f1;
+            border-radius: 4px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        th {
+            background-color: #3498db;
+            color: white;
+        }
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        #loadingIcon {
+            border: 4px solid #f3f3f3;
+            border-radius: 50%;
+            border-top: 4px solid #3498db;
+            width: 30px;
+            height: 30px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        #downloadContainer {
+            margin-top: 30px;
+            text-align: center;
+        }
+        #downloadLink {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #3498db;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+        #downloadLink:hover {
+            background-color: #2980b9;
+        }
+        #footer {
+            margin-top: 30px;
+            font-size: 0.9em;
+            color: #7f8c8d;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>OpenAI Chat Cost Analyzer</h1>
+
+        <div id="status_loading_gpttokenizer"></div>
+
+        <label for="modelSelect">Select the model*:</label>
+        <select id="modelSelect">
+                <optgroup label="GPT-4o Models">
+                    <option value="gpt-4o">gpt-4o (5.00 USD / 1M input tokens, 15.00 USD / 1M output tokens)</option>
+                    <option value="gpt-4o-2024-05-13">gpt-4o-2024-05-13 (5.00 USD / 1M input tokens, 15.00 USD / 1M output tokens)</option>
+                </optgroup>
+                <optgroup label="GPT-3.5 Turbo Models">
+                    <option value="gpt-3.5-turbo-0125">gpt-3.5-turbo-0125 (0.50 USD / 1M input tokens, 1.50 USD / 1M output tokens)</option>
+                    <option value="gpt-3.5-turbo-instruct">gpt-3.5-turbo-instruct (1.50 USD / 1M input tokens, 2.00 USD / 1M output tokens)</option>
+                </optgroup>
+                <optgroup label="Embedding Models">
+                    <option value="text-embedding-3-small">text-embedding-3-small (0.02 USD / 1M tokens)</option>
+                    <option value="text-embedding-3-large">text-embedding-3-large (0.13 USD / 1M tokens)</option>
+                    <option value="ada-v2">ada-v2 (0.10 USD / 1M tokens)</option>
+                </optgroup>
+                <optgroup label="Fine-tuning Models">
+                    <option value="gpt-3.5-turbo">gpt-3.5-turbo (3.00 USD / 1M input tokens, 6.00 USD / 1M output tokens)</option>
+                    <option value="davinci-002">davinci-002 (12.00 USD / 1M input tokens, 12.00 USD / 1M output tokens)</option>
+                    <option value="babbage-002">babbage-002 (1.60 USD / 1M input tokens, 1.60 USD / 1M output tokens)</option>
+                </optgroup>
+                <optgroup label="Older Models">
+                    <option value="gpt-4-turbo">gpt-4-turbo (10.00 USD / 1M input tokens, 30.00 USD / 1M output tokens)</option>
+                    <option value="gpt-4-turbo-2024-04-09">gpt-4-turbo-2024-04-09 (10.00 USD / 1M input tokens, 30.00 USD / 1M output tokens)</option>
+                    <option value="gpt-4">gpt-4 (30.00 USD / 1M input tokens, 60.00 USD / 1M output tokens)</option>
+                    <option value="gpt-4-32k">gpt-4-32k (60.00 USD / 1M input tokens, 120.00 USD / 1M output tokens)</option>
+                    <option value="gpt-4-0125-preview">gpt-4-0125-preview (10.00 USD / 1M input tokens, 30.00 USD / 1M output tokens)</option>
+                    <option value="gpt-4-1106-preview">gpt-4-1106-preview (10.00 USD / 1M input tokens, 30.00 USD / 1M output tokens)</option>
+                    <option value="gpt-4-vision-preview">gpt-4-vision-preview (10.00 USD / 1M input tokens, 30.00 USD / 1M output tokens)</option>
+                    <option value="gpt-3.5-turbo-1106">gpt-3.5-turbo-1106 (1.00 USD / 1M input tokens, 2.00 USD / 1M output tokens)</option>
+                    <option value="gpt-3.5-turbo-0613">gpt-3.5-turbo-0613 (1.50 USD / 1M input tokens, 2.00 USD / 1M output tokens)</option>
+                    <option value="gpt-3.5-turbo-16k-0613">gpt-3.5-turbo-16k-0613 (3.00 USD / 1M input tokens, 4.00 USD / 1M output tokens)</option>
+                    <option value="gpt-3.5-turbo-0301">gpt-3.5-turbo-0301 (1.50 USD / 1M input tokens, 2.00 USD / 1M output tokens)</option>
+                    <option value="davinci-002">davinci-002 (2.00 USD / 1M input tokens, 2.00 USD / 1M output tokens)</option>
+                    <option value="babbage-002">babbage-002 (0.40 USD / 1M input tokens, 0.40 USD / 1M output tokens)</option>
+                </optgroup>
+            </select>
+
+            <div class="checkbox-container">
+                <label for="apiBatch">
+                    <input type="checkbox" id="apiBatch">
+                    API Batch*
+                </label>
+            </div>
+
+        <label for="fileInput">Select the JSON file:</label>
+        <input type="file" id="fileInput" accept=".json">
+        
+        <div id="loadingMessage">
+            Loading the JSON file, please wait...
+            <div id="loadingIcon"></div>
+        </div>
+
+        <div id="debug"></div>
+        <div id="results"></div>
+
+        <div id="downloadContainer">
+            <a href="#" id="downloadLink">
+                <i class="fas fa-download"></i> Download this page
+            </a>
+            <p>This page ensures the privacy of your sensitive data because it works entirely locally. Your JSON file containing private chats is never uploaded to a remote server. However, for added security, you can download the page, review the source code, and use it offline without sharing your sensitive information online.</p>
+        </div>
+
+        <footer id="footer">
+            <p>*Models and prices are sourced from the official OpenAI page: <a href="https://openai.com/api/pricing/" target="_blank">OpenAI API Pricing</a> (in the case of API Batch, which returns completions within 24 hours, consider a 50% discount).</p>
+            <p>*API Batch returns completions within 24 hours with a 50% discount.</p>
+            <p>Updated Prices on: June 29, 2024</p>
+        </footer>
+    </div>
+
+    <script>
+        const pricing = {
+            "gpt-4o": { input: 5.0, output: 15.0 },
+            "gpt-4o-2024-05-13": { input: 5.0, output: 15.0 },
+            "gpt-3.5-turbo-0125": { input: 0.5, output: 1.5 },
+            "gpt-3.5-turbo-instruct": { input: 1.5, output: 2.0 },
+            "text-embedding-3-small": { input: 0.02, output: 0.02 },
+            "text-embedding-3-large": { input: 0.13, output: 0.13 },
+            "ada-v2": { input: 0.1, output: 0.1 },
+            "gpt-3.5-turbo": { input: 3.0, output: 6.0 },
+            "davinci-002": { input: 12.0, output: 12.0 },
+            "babbage-002": { input: 1.6, output: 1.6 },
+            "gpt-4-turbo": { input: 10.0, output: 30.0 },
+            "gpt-4-turbo-2024-04-09": { input: 10.0, output: 30.0 },
+            "gpt-4": { input: 30.0, output: 60.0 },
+            "gpt-4-32k": { input: 60.0, output: 120.0 },
+            "gpt-4-0125-preview": { input: 10.0, output: 30.0 },
+            "gpt-4-1106-preview": { input: 10.0, output: 30.0 },
+            "gpt-4-vision-preview": { input: 10.0, output: 30.0 },
+            "gpt-3.5-turbo-1106": { input: 1.0, output: 2.0 },
+            "gpt-3.5-turbo-0613": { input: 1.5, output: 2.0 },
+            "gpt-3.5-turbo-16k-0613": { input: 3.0, output: 4.0 },
+            "gpt-3.5-turbo-0301": { input: 1.5, output: 2.0 },
+            "davinci-002": { input: 2.0, output: 2.0 },
+            "babbage-002": { input: 0.4, output: 0.4 }            
+        };
+
+        const debugEl = document.getElementById('debug');
+
+        // Function to check if GPTTokenizer_cl100k_base is loaded correctly
+        function checkGPTTokenizer() {
+            const statusDiv = document.getElementById('status_loading_gpttokenizer');
+            
+            // Log all properties of the global object
+            console.log(window);
+            
+            if (typeof GPTTokenizer_cl100k_base !== 'undefined') {
+                const successMessage = document.createElement('p');
+                successMessage.textContent = 'Encoder GPTTokenizer_cl100k_base loaded successfully.';
+                statusDiv.appendChild(successMessage);
+            } else {
+                const errorMessage = document.createElement('p');
+                errorMessage.textContent = 'Encoder GPTTokenizer_cl100k_base not loaded.';
+                statusDiv.appendChild(errorMessage);
+            }
+        }
+
+        function debug(message) {
+            const messageEl = document.createElement('p');
+            messageEl.textContent = message;
+            debugEl.appendChild(messageEl);
+        }
+
+        document.getElementById('modelSelect').addEventListener('change', resetResults);
+        document.getElementById('fileInput').addEventListener('change', handleFileSelect);
+
+        function handleFileSelect(event) {
+            const file = event.target.files[0];
+            debug(`Selected file: ${file.name}`);
+            const reader = new FileReader();
+
+            // Show the loading message
+            document.getElementById('loadingMessage').style.display = 'block';
+
+            reader.onload = function(e) {
+                debug('File loaded successfully');
+                const content = e.target.result;
+                processJSON(content);
+                // Hide the loading message
+                document.getElementById('loadingMessage').style.display = 'none';
+            };
+
+            reader.onerror = function(e) {
+                debug(`Error reading file: ${e.target.error}`);
+                // Hide the loading message even in case of error
+                document.getElementById('loadingMessage').style.display = 'none';
+            };
+
+            reader.readAsText(file);
+        }
+
+        function processJSON(content) {
+            try {
+                const data = JSON.parse(content);
+                debug(`JSON parsed successfully. Number of items: ${data.length}`);
+                const messages = extractMessages(data);
+                debug(`Messages extracted: ${messages.length}`);
+                const results = analyzeMessages(messages);
+                displayResults(results);
+            } catch (error) {
+                debug(`Error processing JSON: ${error.message}`);
+            }
+        }
+
+        function extractMessages(data) {
+            let messages = [];
+            data.forEach(conversation => {
+                if (conversation.mapping) {
+                    Object.values(conversation.mapping).forEach(item => {
+                        if (item.message && item.message.content && item.message.content.parts) {
+                            const timestamp = item.message.create_time;
+                            if (timestamp && timestamp > 0) { // Check for valid timestamps: some have null create_time
+                                messages.push({
+                                    role: item.message.author.role,
+                                    content: item.message.content.parts.join(' '),
+                                    create_time: timestamp
+                                });
+                            }
+                        }
+                    });
+                }
+            });
+            return messages;
+        }
+
+        function countTokens(text) {
+            if (typeof GPTTokenizer_cl100k_base !== 'undefined') {
+                return GPTTokenizer_cl100k_base.encode(text).length;
+            } else {
+                debug('GPTTokenizer_cl100k_base is not available');
+                // Fallback: rough approximation based on the number of words
+                return text.split(/\s+/).length;
+            }
+        }
+
+        function analyzeMessages(messages) {
+            const model = document.getElementById('modelSelect').value;
+            const isApiBatch = document.getElementById('apiBatch').checked;
+            let inputPrice = pricing[model].input / 1000000;
+            let outputPrice = pricing[model].output / 1000000;
+
+            if (isApiBatch) {
+                inputPrice /= 2;
+                outputPrice /= 2;
+            }
+
+            let totalInputTokens = 0;
+            let totalOutputTokens = 0;
+            const monthlyCosts = {};
+
+            messages.forEach(message => {
+                const tokenCount = countTokens(message.content);
+
+                const date = new Date(message.create_time * 1000);
+                const monthKey = `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, '0')}`;
+
+                if (!monthlyCosts[monthKey]) {
+                    monthlyCosts[monthKey] = { input: 0, output: 0, inputTokens: 0, outputTokens: 0 };
+                }
+
+                if (message.role === 'user' || message.role === 'system') {
+                    totalInputTokens += tokenCount;
+                    monthlyCosts[monthKey].input += tokenCount * inputPrice;
+                    monthlyCosts[monthKey].inputTokens += tokenCount;
+                } else if (message.role === 'assistant') {
+                    totalOutputTokens += tokenCount;
+                    monthlyCosts[monthKey].output += tokenCount * outputPrice;
+                    monthlyCosts[monthKey].outputTokens += tokenCount;
+                }
+            });
+
+            const totalCost = (totalInputTokens * inputPrice) + (totalOutputTokens * outputPrice);
+
+            debug(`Analysis completed. Input Tokens: ${totalInputTokens}, Output Tokens: ${totalOutputTokens}`);
+
+            return {
+                totalInputTokens,
+                totalOutputTokens,
+                totalCost,
+                monthlyCosts
+            };
+        }
+
+        function displayResults(results) {
+            const resultsDiv = document.getElementById('results');
+            resultsDiv.innerHTML = `
+                <h2>Analysis Results</h2>
+                <p>Total Input Tokens: ${results.totalInputTokens.toLocaleString()}</p>
+                <p>Total Output Tokens: ${results.totalOutputTokens.toLocaleString()}</p>
+                <p>Total Cost: $${results.totalCost.toFixed(2)}</p>
+                <h3>Monthly Costs</h3>
+                <table>
+                    <tr>
+                        <th>Month</th>
+                        <th>Input Tokens</th>
+                        <th>Output Tokens</th>
+                        <th>Input Cost</th>
+                        <th>Output Cost</th>
+                        <th>Total Cost</th>
+                    </tr>
+                    ${Object.entries(results.monthlyCosts).map(([month, costs]) => `
+                        <tr>
+                            <td>${month}</td>
+                            <td>${costs.inputTokens.toLocaleString()}</td>
+                            <td>${costs.outputTokens.toLocaleString()}</td>
+                            <td>$${costs.input.toFixed(2)}</td>
+                            <td>$${costs.output.toFixed(2)}</td>
+                            <td>$${(costs.input + costs.output).toFixed(2)}</td>
+                        </tr>
+                    `).join('')}
+                </table>
+            `;
+            debug('Results displayed');
+        }
+
+        // Add code to download the HTML page
+        document.getElementById('downloadLink').addEventListener('click', function() {
+            // Extract the HTML of the current page
+            const pageHTML = document.documentElement.outerHTML;
+            
+            // Create a blob with the HTML content
+            const blob = new Blob([pageHTML], { type: 'text/html' });
+            
+            // Create a URL for the blob
+            const url = URL.createObjectURL(blob);
+            
+            // Set the href attribute of the download link
+            this.href = url;
+            
+            // Set the file name for the download
+            this.download = 'page.html';
+        });
+
+        // Function to reset the results
+        function resetResults() {
+            document.getElementById('results').innerHTML = '';
+            document.getElementById('debug').innerHTML = '';
+            document.getElementById('fileInput').value = '';
+        }
+
+        // Perform the check when the document is ready
+        document.addEventListener('DOMContentLoaded', checkGPTTokenizer);
+
+    </script>
+</body>
+</html>
