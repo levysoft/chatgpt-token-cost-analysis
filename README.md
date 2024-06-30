@@ -1,6 +1,15 @@
 # ChatGPT Token Cost Analysis
 
-This repository contains a Python script for analyzing the costs associated with tokens generated from ChatGPT export chats. The script extracts messages from a JSON file, calculates the number of tokens used, and determines the costs for input and output tokens. Additionally, it groups the costs by month and saves the results in a CSV file.
+This repository provides tools for analyzing the costs associated with tokens generated from ChatGPT export chats. It includes both a Python script and an HTML version for flexible and privacy-enhanced usage.
+
+## Introduction
+
+The repository contains:
+- A Python script for detailed token cost analysis, which processes a JSON file of exported ChatGPT conversations.
+- An HTML + JavaScript application that allows for local analysis of token costs directly in a web browser, ensuring full privacy and offline functionality.
+
+## Python Script
+This part of the repository contains a Python script for analyzing the costs associated with tokens generated from ChatGPT export chats. The script extracts messages from a JSON file, calculates the number of tokens used, and determines the costs for input and output tokens. Additionally, it groups the costs by month and saves the results in a CSV file.
 
 ## Requirements
 
@@ -89,9 +98,9 @@ Costs per month:
 1   2023-01    0.094950     1.419300         18990          94620  1.514250
 0   2022-12    0.054870     1.562010         10974         104134  1.616880
 ```
-## Web-Based Token Cost Analyzer
 
-In addition to the Python script, I've created a single-page HTML + JavaScript application that allows anyone to analyze token costs locally. This HTML page `chatgpt_token_cost_analysis.html` does not use the `tiktoken` library, which is unavailable in JavaScript, but rather utilizes the `gpt-tokenizer` library.
+## HTML + JavaScript Web-Based Version
+In addition to the Python script, this repository includes a single-page HTML + JavaScript application that allows anyone to analyze token costs locally. This HTML page does not use the tiktoken library, which is unavailable in JavaScript, but rather utilizes the gpt-tokenizer library.
 
 ### Why the HTML Page?
 
