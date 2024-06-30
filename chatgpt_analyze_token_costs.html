@@ -260,11 +260,11 @@
             
             if (typeof GPTTokenizer_cl100k_base !== 'undefined') {
                 const successMessage = document.createElement('p');
-                successMessage.textContent = 'Encoder GPTTokenizer_cl100k_base loaded successfully.';
+                successMessage.textContent = 'Remote Encoder GPTTokenizer_cl100k_base loaded successfully.';
                 statusDiv.appendChild(successMessage);
             } else {
                 const errorMessage = document.createElement('p');
-                errorMessage.textContent = 'Encoder GPTTokenizer_cl100k_base not loaded. Attempting to load the local version...';
+                errorMessage.textContent = 'Remote Encoder GPTTokenizer_cl100k_base not loaded. Attempting to load the local version...';
                 statusDiv.appendChild(errorMessage);
 
                 loadScript('cl100k_base.js', function(err) {
@@ -272,6 +272,12 @@
                         const finalErrorMessage = document.createElement('p');
                         finalErrorMessage.textContent = 'Failed to load local GPTTokenizer_cl100k_base.';
                         statusDiv.appendChild(finalErrorMessage);
+
+                        // Add second row with fallback error message
+                        const additionalMessage = document.createElement('p');
+                        additionalMessage.textContent = 'Switch to Fallback: rough approximation based on the number of words.';
+                        statusDiv.appendChild(additionalMessage);
+
                     } else {
                         if (typeof GPTTokenizer_cl100k_base !== 'undefined') {
                             const successLocalMessage = document.createElement('p');
