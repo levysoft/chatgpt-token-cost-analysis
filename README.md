@@ -23,7 +23,7 @@ This repository contains a Python script for analyzing the costs associated with
 1. Place your `conversations.json` file in the main directory of the project.
 2. Run the script:
     ```sh
-    python chatgpt_analyze_token_costs.py
+    python chatgpt_token_cost_analysis.py
     ```
 
 ## Script Description
@@ -91,7 +91,7 @@ Costs per month:
 ```
 ## Web-Based Token Cost Analyzer
 
-In addition to the Python script, I've created a single-page HTML + JavaScript application that allows anyone to analyze token costs locally. This HTML page does not use the `tiktoken` library, which is unavailable in JavaScript, but rather utilizes the `gpt-tokenizer` library.
+In addition to the Python script, I've created a single-page HTML + JavaScript application that allows anyone to analyze token costs locally. This HTML page `chatgpt_token_cost_analysis.html` does not use the `tiktoken` library, which is unavailable in JavaScript, but rather utilizes the `gpt-tokenizer` library.
 
 ### Why the HTML Page?
 
@@ -121,6 +121,14 @@ Here's a brief overview of how it works:
 To use the local version of the tokenizer, make sure to download `cl100k_base.js` and place it in the same directory as the HTML file. This approach ensures that your data remains private and the functionality is available even without an internet connection.
 
 This enhancement makes the tool more privacy-compliant and ensures that users can analyze their chat data under any network conditions.
+
+
+### Online Version
+You can try the online version of the HTML page here: [https://www.levysoft.it/chatgpt-costs](https://www.levysoft.it/chatgpt-costs). 
+
+
+### Offline Usage
+You can always always download the HTML page and use it locally and offline. To do this, make sure you also download the JavaScript library cl100k_base.js. The page will work in total privacy without requiring an internet connection.
 
 ### Screenshot
 
