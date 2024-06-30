@@ -108,6 +108,20 @@ In addition to the Python script, I've created a single-page HTML + JavaScript a
 
 This web-based tool provides a more user-friendly and comprehensive way to analyze token costs for various models and use cases.
 
+### Enhancing Privacy and Offline Functionality
+
+To ensure the privacy of your data and provide functionality even when offline, the HTML page includes a mechanism to load the `GPTTokenizer_cl100k_base` encoder from a local source if the remote JavaScript file is not accessible. By default, the page attempts to load the tokenizer from the remote URL `https://unpkg.com/gpt-tokenizer`. If this remote file is not available, the script will then try to load a local version of the tokenizer (`cl100k_base.js`).
+
+Here's a brief overview of how it works:
+
+- The `checkGPTTokenizer` function first attempts to load the `GPTTokenizer_cl100k_base` encoder from the remote source.
+- If the remote file is not accessible, it attempts to load the local `cl100k_base.js` file.
+- If neither the remote nor local files are available, the script falls back to a rough approximation based on the number of words in the text. This fallback method, while not as precise, provides a useful estimate of token usage.
+
+To use the local version of the tokenizer, make sure to download `cl100k_base.js` and place it in the same directory as the HTML file. This approach ensures that your data remains private and the functionality is available even without an internet connection.
+
+This enhancement makes the tool more privacy-compliant and ensures that users can analyze their chat data under any network conditions.
+
 ### Screenshot
 
 Here is a screenshot of the web page:
