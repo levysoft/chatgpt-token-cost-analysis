@@ -3,9 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>OpenAI ChatGPT Cost Analyzer</title>
+    <title>OpenAI Chat Cost Analyzer</title>
     <script src="https://unpkg.com/gpt-tokenizer"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <style>
         body {
             font-family: 'Arial, sans-serif', sans-serif;
@@ -205,11 +204,11 @@
 
         <div id="downloadContainer">
             <a href="#" id="downloadLink">
-                <i class="fas fa-download"></i> Download this page
+                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAhGVYSWZNTQAqAAAACAAFARIAAwAAAAEAAQAAARoABQAAAAEAAABKARsABQAAAAEAAABSASgAAwAAAAEAAgAAh2kABAAAAAEAAABaAAAAAAAAAEgAAAABAAAASAAAAAEAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAFKADAAQAAAABAAAAFAAAAABB553+AAAACXBIWXMAAAsTAAALEwEAmpwYAAACMmlUWHRYTUw6Y29tLmFkb2JlLnhtcAAAAAAAPHg6eG1wbWV0YSB4bWxuczp4PSJhZG9iZTpuczptZXRhLyIgeDp4bXB0az0iWE1QIENvcmUgNi4wLjAiPgogICA8cmRmOlJERiB4bWxuczpyZGY9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkvMDIvMjItcmRmLXN5bnRheC1ucyMiPgogICAgICA8cmRmOkRlc2NyaXB0aW9uIHJkZjphYm91dD0iIgogICAgICAgICAgICB4bWxuczpleGlmPSJodHRwOi8vbnMuYWRvYmUuY29tL2V4aWYvMS4wLyIKICAgICAgICAgICAgeG1sbnM6dGlmZj0iaHR0cDovL25zLmFkb2JlLmNvbS90aWZmLzEuMC8iPgogICAgICAgICA8ZXhpZjpQaXhlbFlEaW1lbnNpb24+NTEyPC9leGlmOlBpeGVsWURpbWVuc2lvbj4KICAgICAgICAgPGV4aWY6UGl4ZWxYRGltZW5zaW9uPjUxMjwvZXhpZjpQaXhlbFhEaW1lbnNpb24+CiAgICAgICAgIDxleGlmOkNvbG9yU3BhY2U+MTwvZXhpZjpDb2xvclNwYWNlPgogICAgICAgICA8dGlmZjpPcmllbnRhdGlvbj4xPC90aWZmOk9yaWVudGF0aW9uPgogICAgICA8L3JkZjpEZXNjcmlwdGlvbj4KICAgPC9yZGY6UkRGPgo8L3g6eG1wbWV0YT4KanJCRQAAAbBJREFUOBGVkztKA2EUhfMwgliIEIUgiAiCYKf2glhbWbkCN+EK7FyAW7AQCwuX4AbstLQQFIOvJON3/rlnMkyUMRduzn2ce/7XpNGosSzLmmVKNS/3amMPgz18F1/TkOu1AlUCgzMhcEYsu468XeU6bzmowVH0jX/S/yv4p0C1USfoo5nnB0pXURVTbuJEj/tqYp/ReA/8EpbqUR7DryuFmB7hIKibgSvU9onn8BuEB+ZGPwcV5S4Sp6OCx7htSCCXnYsL+krSp0SeaygoklAl9ydzSizr55DdlhYub2JCI/EYSiQhnu4YvMJlT/iSiGCxOy9QIM0L/AE/CbJ3Z8H56B9GvxPoq9mjf49f+lF2IKzi6yJiaZdc+ghSC9Rxt8A3EGh+57ScR9zFN/AFC/aD4M+kzeCQmoQJs06Iia886A3tcICLK3u1YDoahdRg+CO1xz/pL0ddw2WzULERC/q1uqy+yMQy7mOVBaqx5p9xXVcyv+gd2TZuES+Qs+p/dQd6qEfv0FtXQzVfUrpDcpsXKvfV8/zAgjqmbDaHqX/9Bl0f+QiJHq4/v5vTqPpkLz8GHxq29/nHtAAAAABJRU5ErkJggg==" alt="" /> Download this page
             </a>
             <p>This page ensures the privacy of your sensitive data because it works entirely locally. Your JSON file containing private chats is never uploaded to a remote server. However, for added security, you can download the page, review the source code, and use it offline without sharing your sensitive information online.</p>
         </div>
-
+        
         <footer id="footer">
             <p>*Models and prices are sourced from the official OpenAI page: <a href="https://openai.com/api/pricing/" target="_blank">OpenAI API Pricing</a> (in the case of API Batch, which returns completions within 24 hours, consider a 50% discount).</p>
             <p>*API Batch returns completions within 24 hours with a 50% discount.</p>
@@ -246,12 +245,18 @@
 
         const debugEl = document.getElementById('debug');
 
+        // Function to load script dynamically
+        function loadScript(url, callback) {
+            const script = document.createElement('script');
+            script.src = url;
+            script.onload = () => callback(null);
+            script.onerror = () => callback(new Error(`Failed to load script: ${url}`));
+            document.head.appendChild(script);
+        }
+
         // Function to check if GPTTokenizer_cl100k_base is loaded correctly
         function checkGPTTokenizer() {
             const statusDiv = document.getElementById('status_loading_gpttokenizer');
-            
-            // Log all properties of the global object
-            console.log(window);
             
             if (typeof GPTTokenizer_cl100k_base !== 'undefined') {
                 const successMessage = document.createElement('p');
@@ -259,8 +264,26 @@
                 statusDiv.appendChild(successMessage);
             } else {
                 const errorMessage = document.createElement('p');
-                errorMessage.textContent = 'Encoder GPTTokenizer_cl100k_base not loaded.';
+                errorMessage.textContent = 'Encoder GPTTokenizer_cl100k_base not loaded. Attempting to load the local version...';
                 statusDiv.appendChild(errorMessage);
+
+                loadScript('cl100k_base.js', function(err) {
+                    if (err) {
+                        const finalErrorMessage = document.createElement('p');
+                        finalErrorMessage.textContent = 'Failed to load local GPTTokenizer_cl100k_base.';
+                        statusDiv.appendChild(finalErrorMessage);
+                    } else {
+                        if (typeof GPTTokenizer_cl100k_base !== 'undefined') {
+                            const successLocalMessage = document.createElement('p');
+                            successLocalMessage.textContent = 'Local GPTTokenizer_cl100k_base loaded successfully.';
+                            statusDiv.appendChild(successLocalMessage);
+                        } else {
+                            const errorLocalMessage = document.createElement('p');
+                            errorLocalMessage.textContent = 'Local GPTTokenizer_cl100k_base is still not available after loading.';
+                            statusDiv.appendChild(errorLocalMessage);
+                        }
+                    }
+                });
             }
         }
 
@@ -437,7 +460,7 @@
             this.href = url;
             
             // Set the file name for the download
-            this.download = 'page.html';
+            this.download = 'chatgpt_analyze_token_costs.html';
         });
 
         // Function to reset the results
