@@ -143,11 +143,11 @@ You can always always download the HTML page and use it locally and offline. To 
 
 Here is a screenshot of the web page:
 
-![Web Page Screenshot](screenshot1.jpg)
+![Web Page Screenshot](assets/screenshot1.jpg)
 
 Make sure to download the page and use it offline for maximum privacy and security.
 
-![Web Page Screenshot](screenshot2.jpg)
+![Web Page Screenshot](assets/screenshot2.jpg)
 
 ### How to Export Your ChatGPT History and Data
 
