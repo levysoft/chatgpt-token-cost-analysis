@@ -157,20 +157,20 @@ Make sure to download the page and use it offline for maximum privacy and securi
 
 To analyze your ChatGPT chat history with our tools, you first need to export your data from ChatGPT. Here’s how you can do it:
 
-1. Sign in to ChatGPT.
-2. In the top right corner of the page, click on your profile icon.
-3. Click on **Settings**.
-
-![ChatGPTScreenshot](assets/screenshot3.jpg)
-
-4. Go to the **Data Controls** menu.
-5. Under **Export Data**, click **Export**.
-
-![ChatGPTScreenshot](assets/screenshot4.jpg)
-
-6. In the confirmation screen, click **Confirm export**.
-
-![ChatGPTScreenshot](assets/screenshot5.jpg)
+> 1. Sign in to ChatGPT.
+> 2. In the top right corner of the page, click on your profile icon.
+> 3. Click on **Settings**.
+> 
+> ![ChatGPTScreenshot](assets/screenshot3.jpg)
+> 
+> 4. Go to the **Data Controls** menu.
+> 5. Under **Export Data**, click **Export**.
+> 
+> ![ChatGPTScreenshot](assets/screenshot4.jpg)
+> 
+> 6. In the confirmation screen, click **Confirm export**.
+> 
+> ![ChatGPTScreenshot](assets/screenshot5.jpg)
 
 You should receive an email with your data. Note that the link in the email expires after 24 hours. Click on **Download data export** to download a `.zip` file. This file includes your chat history in `chat.html` as well as other data associated with your account.
 
