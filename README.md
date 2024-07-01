@@ -120,8 +120,8 @@ In addition to the Python script, this repository includes a single-page HTML + 
 
 1. **Download the Page**: Click the download link on the page to save it for offline use.
 2. **Select the Model**: Choose the appropriate model from the dropdown menu.
-4. **Upload Your JSON File**: Select your `conversations.json` file to analyze. Implemented JSON format validation to ensure the uploaded file adheres to the required structure.
-5. **View Results**: The analysis results, including total and monthly costs, will be displayed directly on the page.
+3. **Upload Your JSON File**: Select your `conversations.json` file to analyze. Implemented JSON format validation to ensure the uploaded file adheres to the required structure.
+4. **View Results**: The analysis results, including total and monthly costs, will be displayed directly on the page.
 
 This web-based tool provides a more user-friendly and comprehensive way to analyze token costs for various models and use cases.
 
