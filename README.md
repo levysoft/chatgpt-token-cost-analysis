@@ -155,24 +155,32 @@ Make sure to download the page and use it offline for maximum privacy and securi
 
 ### How to Export Your ChatGPT History and Data
 
-> To analyze your ChatGPT chat history with our tools, you first need to export your data from ChatGPT. Here’s how you can do it:
->
-> 1. Sign in to ChatGPT.
-> 2. In the top right corner of the page, click on your profile icon.
-> 3. Click on **Settings**.
-> 4. Go to the **Data Controls** menu.
-> 5. Under **Export Data**, click **Export**.
-> 6. In the confirmation screen, click **Confirm export**.
->
-> You should receive an email with your data. Note that the link in the email expires after 24 hours. Click on **Download data export** to download a `.zip` file. This file includes your chat history in `chat.html` as well as other data associated with your account.
->
-> In the `.zip` file, you will find both `chat.html` and `conversations.json`. The `conversations.json` file is the one required for processing with our tools.
-> 
-> This functionality is available on both Free and Plus plans. It is not available to users who are logged out.
->
-> For more details you can visit the [How do I export my ChatGPT history and data?](https://help.openai.com/en/articles/7260999-how-do-i-export-my-chatgpt-history-and-data).
->
-> If you follow these steps, you will have your chat data ready for analysis using our Python script or HTML page.
+To analyze your ChatGPT chat history with our tools, you first need to export your data from ChatGPT. Here’s how you can do it:
+
+1. Sign in to ChatGPT.
+2. In the top right corner of the page, click on your profile icon.
+3. Click on **Settings**.
+
+![ChatGPTScreenshot](assets/screenshot3.jpg)
+
+4. Go to the **Data Controls** menu.
+5. Under **Export Data**, click **Export**.
+
+![ChatGPTScreenshot](assets/screenshot4.jpg)
+
+6. In the confirmation screen, click **Confirm export**.
+
+![ChatGPTScreenshot](assets/screenshot5.jpg)
+
+You should receive an email with your data. Note that the link in the email expires after 24 hours. Click on **Download data export** to download a `.zip` file. This file includes your chat history in `chat.html` as well as other data associated with your account.
+
+In the `.zip` file, you will find both `chat.html` and `conversations.json`. The `conversations.json` file is the one required for processing with our tools.
+ 
+This functionality is available on both Free and Plus plans. It is not available to users who are logged out.
+
+For more details you can visit the [How do I export my ChatGPT history and data?](https://help.openai.com/en/articles/7260999-how-do-i-export-my-chatgpt-history-and-data).
+
+If you follow these steps, you will have your chat data ready for analysis using our Python script or HTML page.
 
 
 ## Author
