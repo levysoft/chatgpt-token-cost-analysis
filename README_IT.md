@@ -181,6 +181,10 @@ Per ulteriori dettagli, puoi visitare [Come posso esportare la cronologia e i da
 
 Se segui questi passaggi, avrai i tuoi dati di chat pronti per l'analisi utilizzando il nostro script Python o la pagina HTML.
 
+## Feedback e Contributi
+
+Il tuo feedback è molto apprezzato! Se hai suggerimenti, bug da segnalare o miglioramenti, sentiti libero di aprire un issue o una pull request nel repository GitHub. Se desideri contribuire al progetto, le pull request sono benvenute.
+
 ## Changelog
 
 Puoi trovare tutte le modifiche e le versioni del progetto nel [CHANGELOG.md](./CHANGELOG.md).
