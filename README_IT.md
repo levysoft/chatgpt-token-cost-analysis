@@ -120,7 +120,7 @@ Oltre allo script Python, questa repository include un'applicazione HTML + JavaS
 
 1. **Scarica la Pagina**: Clicca sul link di download sulla pagina per salvarla per l'uso offline.
 2. **Seleziona il Modello**: Scegli il modello appropriato dal menu a discesa.
-3. **Carica il Tuo File JSON**: Seleziona il tuo file `conversations.json` da analizzare.
+3. **Carica il tuo file JSON**: Seleziona il tuo file `conversations.json` da analizzare. È stata implementata la validazione del formato JSON per garantire che il file caricato rispetti la struttura richiesta.
 4. **Visualizza i Risultati**: I risultati dell'analisi, inclusi i costi totali e mensili, saranno visualizzati direttamente sulla pagina.
 
 Questo strumento web-based fornisce un modo più user-friendly e completo per analizzare i costi dei token per vari modelli e casi d'uso.
