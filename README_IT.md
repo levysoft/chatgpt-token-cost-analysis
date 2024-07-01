@@ -154,24 +154,32 @@ Assicurati di scaricare la pagina e usarla offline per massima privacy e sicurez
 
 ### Come Esportare la Tua Cronologia e Dati di ChatGPT
 
-> Per analizzare la cronologia delle tue chat di ChatGPT con i nostri strumenti, devi prima esportare i tuoi dati da ChatGPT. Ecco come puoi farlo:
->
+Per analizzare la cronologia delle tue chat di ChatGPT con i nostri strumenti, devi prima esportare i tuoi dati da ChatGPT. Ecco come puoi farlo:
+
 > 1. Accedi a ChatGPT.
 > 2. Nell'angolo in alto a destra della pagina, clicca sulla tua icona del profilo.
 > 3. Clicca su **Impostazioni**.
-> 4. Vai al menu **Controlli dei Dati**.
-> 5. Sotto **Esporta Dati**, clicca **Esporta**.
-> 6. Nella schermata di conferma, clicca **Conferma esportazione**.
->
-> Dovresti ricevere un'email con i tuoi dati. Nota che il link nell'email scade dopo 24 ore. Clicca su **Scarica esportazione dati** per scaricare un file `.zip`. Questo file include la cronologia delle tue chat in `chat.html` e altri dati associati al tuo account.
->
-> Nel file `.zip`, troverai sia `chat.html` che `conversations.json`. Il file `conversations.json` è quello richiesto per l'elaborazione con i nostri strumenti.
 > 
-> Questa funzionalità è disponibile sia nei piani Free che Plus. Non è disponibile per gli utenti disconnessi.
->
-> Per ulteriori dettagli, puoi visitare [Come posso esportare la cronologia e i dati di ChatGPT?](https://help.openai.com/en/articles/7260999-how-do-i-export-my-chatgpt-history-and-data).
->
-> Se segui questi passaggi, avrai i tuoi dati di chat pronti per l'analisi utilizzando il nostro script Python o la pagina HTML.
+> ![ChatGPTScreenshot](assets/screenshot3.jpg)
+> 
+> 4. Vai al menu **Controlli Dati**.
+> 5. Sotto **Esporta Dati**, clicca **Esporta**.
+> 
+> ![ChatGPTScreenshot](assets/screenshot4.jpg)
+> 
+> 6. Nella schermata di conferma, clicca **Conferma esportazione**.
+> 
+> ![ChatGPTScreenshot](assets/screenshot5.jpg)
+
+Dovresti ricevere un'email con i tuoi dati. Nota che il link nell'email scade dopo 24 ore. Clicca su **Scarica esportazione dati** per scaricare un file `.zip`. Questo file include la cronologia delle tue chat in `chat.html` e altri dati associati al tuo account.
+
+Nel file `.zip`, troverai sia `chat.html` che `conversations.json`. Il file `conversations.json` è quello richiesto per l'elaborazione con i nostri strumenti.
+
+Questa funzionalità è disponibile sia nei piani Free che Plus. Non è disponibile per gli utenti disconnessi.
+
+Per ulteriori dettagli, puoi visitare [Come posso esportare la cronologia e i dati di ChatGPT?](https://help.openai.com/en/articles/7260999-how-do-i-export-my-chatgpt-history-and-data).
+
+Se segui questi passaggi, avrai i tuoi dati di chat pronti per l'analisi utilizzando il nostro script Python o la pagina HTML.
 
 ## Autore
 
