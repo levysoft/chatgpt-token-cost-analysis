@@ -191,7 +191,7 @@
                 </label>
             </div>
 
-        <label for="fileInput">Select the JSON file:</label>
+        <label for="fileInput">Select the exported ChatGPT Conversation JSON file:</label>
         <input type="file" id="fileInput" accept=".json">
         
         <div id="loadingMessage">
@@ -293,6 +293,11 @@
             }
         }
 
+        /**
+         * Appends a debug message to the debug element.
+         * Creates a new paragraph element with the provided message.
+         * @param {string} message - The debug message to display.
+         */
         function debug(message) {
             const messageEl = document.createElement('p');
             messageEl.textContent = message;
@@ -302,6 +307,12 @@
         document.getElementById('modelSelect').addEventListener('change', resetResults);
         document.getElementById('fileInput').addEventListener('change', handleFileSelect);
 
+        /**
+         * Handles the file selection event.
+         * Reads the selected JSON file and processes it if valid.
+         * Displays a loading message during the file reading process.
+         * @param {Event} event - The file input change event.
+         */
         function handleFileSelect(event) {
             const file = event.target.files[0];
             debug(`Selected file: ${file.name}`);
@@ -313,7 +324,17 @@
             reader.onload = function(e) {
                 debug('File loaded successfully');
                 const content = e.target.result;
-                processJSON(content);
+                //processJSON(content);
+
+                if (isValidJSON(content)) {
+                    debug('JSON validation is OK');
+                    processJSON(content);
+                } else {
+                    debug('Invalid JSON format');
+                    alert('Please select a correctly formatted conversations.json file.');
+                    event.target.value = ''; // Reset the input
+                }
+
                 // Hide the loading message
                 document.getElementById('loadingMessage').style.display = 'none';
             };
@@ -327,6 +348,47 @@
             reader.readAsText(file);
         }
 
+        /**
+         * Validates the JSON content structure.
+         * Checks for required properties in each conversation object.
+         * @param {string} content - The JSON content as a string.
+         * @returns {boolean} - Returns true if the JSON is valid, otherwise false.
+         */
+        function isValidJSON(content) {
+            try {
+                const data = JSON.parse(content);
+        
+                function isValidConversation(convo) {
+                    if (!convo.hasOwnProperty('title') ||
+                        !convo.hasOwnProperty('create_time') ||
+                        !convo.hasOwnProperty('update_time') ||
+                        !convo.hasOwnProperty('mapping')) {
+                        return false;
+                    }
+        
+                    const mapping = convo.mapping;
+                    if (typeof mapping !== 'object') {
+                        return false;
+                    }
+        
+                    return true;
+                }
+        
+                if (Array.isArray(data) && data.every(isValidConversation)) {
+                    return true;
+                } else {
+                    throw new Error('Invalid JSON format');
+                }
+            } catch (err) {
+                return false;
+            }
+        }
+
+        /**
+         * Processes the JSON content.
+         * Parses the JSON, extracts messages, analyzes them, and displays the results.
+         * @param {string} content - The JSON content as a string.
+         */
         function processJSON(content) {
             try {
                 const data = JSON.parse(content);
@@ -340,6 +402,12 @@
             }
         }
 
+        /**
+         * Extracts messages from the JSON data.
+         * Iterates through each conversation and its mapping to collect messages.
+         * @param {Array} data - The parsed JSON data array.
+         * @returns {Array} - An array of extracted messages.
+         */
         function extractMessages(data) {
             let messages = [];
             data.forEach(conversation => {
@@ -361,6 +429,12 @@
             return messages;
         }
 
+        /**
+         * Counts the number of tokens in the given text.
+         * Uses the GPTTokenizer_cl100k_base if available, otherwise falls back to word count approximation.
+         * @param {string} text - The text to tokenize.
+         * @returns {number} - The number of tokens in the text.
+         */
         function countTokens(text) {
             if (typeof GPTTokenizer_cl100k_base !== 'undefined') {
                 return GPTTokenizer_cl100k_base.encode(text).length;
@@ -371,6 +445,13 @@
             }
         }
 
+        /**
+         * Analyzes the extracted messages.
+         * Calculates the number of input and output tokens and their respective costs.
+         * Aggregates the costs by month.
+         * @param {Array} messages - The array of extracted messages.
+         * @returns {Object} - An object containing total input tokens, total output tokens, total cost, and monthly costs.
+         */
         function analyzeMessages(messages) {
             const model = document.getElementById('modelSelect').value;
             const isApiBatch = document.getElementById('apiBatch').checked;
@@ -419,6 +500,11 @@
             };
         }
 
+        /**
+         * Displays the analysis results.
+         * Shows the total input tokens, output tokens, total cost, and monthly costs in a table format.
+         * @param {Object} results - The results object containing total input tokens, total output tokens, total cost, and monthly costs.
+         */
         function displayResults(results) {
             const resultsDiv = document.getElementById('results');
             resultsDiv.innerHTML = `
