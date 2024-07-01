@@ -182,10 +182,14 @@ For more details you can visit the [How do I export my ChatGPT history and data?
 
 If you follow these steps, you will have your chat data ready for analysis using our Python script or HTML page.
 
+
+## Feedback and Contributions
+
+Your feedback is highly appreciated! If you have suggestions, bugs to report, or improvements, feel free to open an issue or a pull request in the GitHub repository. If you would like to contribute to the project, pull requests are welcome.
+
 ## Changelog
 
 You can find all the changes and versions of the project in the [CHANGELOG.md](./CHANGELOG.md).
-
 
 ## Author
 
