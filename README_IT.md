@@ -25,10 +25,15 @@ Questa parte della repository contiene uno script Python per analizzare i costi 
     ```sh
     git clone https://github.com/levysoft/chatgpt-token-cost-analysis.git
     ```
-2. Installa i pacchetti richiesti:
-    ```sh
-    pip install pandas tiktoken
-    ```
+2. Installa i pacchetti richiesti con uno dei seguenti metodi:
+    - Metodo 1: Installa i pacchetti specifici
+      ```sh
+      pip install pandas tiktoken
+      ```
+    - Metodo 2: Installa i pacchetti utilizzando il file requirements.txt
+      ```sh
+      pip install -r requirements.txt
+      ```
 
 ## Utilizzo
 
