@@ -181,6 +181,10 @@ Per ulteriori dettagli, puoi visitare [Come posso esportare la cronologia e i da
 
 Se segui questi passaggi, avrai i tuoi dati di chat pronti per l'analisi utilizzando il nostro script Python o la pagina HTML.
 
+## Changelog
+
+Puoi trovare tutte le modifiche e le versioni del progetto nel [CHANGELOG.md](./CHANGELOG.md).
+
 ## Autore
 
 Antonio Troise
