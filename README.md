@@ -182,6 +182,10 @@ For more details you can visit the [How do I export my ChatGPT history and data?
 
 If you follow these steps, you will have your chat data ready for analysis using our Python script or HTML page.
 
+## Changelog
+
+You can find all the changes and versions of the project in the [CHANGELOG.md](./CHANGELOG.md).
+
 
 ## Author
 
