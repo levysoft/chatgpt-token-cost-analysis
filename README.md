@@ -131,6 +131,7 @@ To use the local version of the tokenizer, make sure to download `cl100k_base.js
 
 This enhancement makes the tool more privacy-compliant and ensures that users can analyze their chat data under any network conditions.
 
+**Note:** I could have made the HTML file a true single-page application for offline use by including the `cl100k_base.js` JavaScript file directly in the HTML. However, since this file is quite large (over 2 MB of data), it would have made the HTML file difficult to read and analyze if viewed directly.
 
 ### Online Version
 You can try the online version of the HTML page here: [https://www.levysoft.it/chatgpt-costs](https://www.levysoft.it/chatgpt-costs). 
