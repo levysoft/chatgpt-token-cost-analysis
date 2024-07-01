@@ -1,16 +1,24 @@
 # Changelog
 
+## [v1.0.5] - 2024-07-02
+#### Added
+- Implemented JSON format validation to ensure the uploaded file adheres to the required structure.
+
+#### Changed
+- Updated the label for the file input to be more descriptive: "Select the exported ChatGPT Conversation JSON file".
+- Added explanatory comments to all major functions for better code readability and maintenance.
+
 ## [v1.0.4] - 2024-07-01
-### Changes
+#### Changes
 - Updated `README.md` for better organization and clarity.
 - Organized screenshot files under `assets` folder for easier exclusion when exporting a project archive.
 
 ## [v1.0.3] - 2024-06-30
-### Changes
+#### Changes
 - Updated the title of the HTML page.
 
 ## [v1.0.2] - 2024-06-30
-### Changes
+#### Changes
 - Added a fallback error message when loading GPTTokenizer_cl100k_base fails.
   - Added message: "Switch to Fallback: rough approximation based on the number of words."
  
