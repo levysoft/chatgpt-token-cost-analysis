@@ -157,7 +157,7 @@ Assicurati di scaricare la pagina e usarla offline per massima privacy e sicurez
 
 ![Web Page Screenshot](assets/screenshot2.jpg)
 
-### Come Esportare la Tua Cronologia e Dati di ChatGPT
+### Come Esportare lo Storico delle Chat di ChatGPT
 
 Per analizzare la cronologia delle tue chat di ChatGPT con i nostri strumenti, devi prima esportare i tuoi dati da ChatGPT. Ecco come puoi farlo:
 
@@ -180,7 +180,7 @@ Dovresti ricevere un'email con i tuoi dati. Nota che il link nell'email scade do
 
 Nel file `.zip`, troverai sia `chat.html` che `conversations.json`. Il file `conversations.json` è quello richiesto per l'elaborazione con i nostri strumenti.
 
-Questa funzionalità è disponibile sia nei piani Free che Plus. Non è disponibile per gli utenti disconnessi.
+Questa funzionalità è disponibile sia nei piani Free che Plus. Non è disponibile per gli utenti che non si sono connessi.
 
 Per ulteriori dettagli, puoi visitare [Come posso esportare la cronologia e i dati di ChatGPT?](https://help.openai.com/en/articles/7260999-how-do-i-export-my-chatgpt-history-and-data).
 
