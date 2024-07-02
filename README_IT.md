@@ -189,9 +189,9 @@ Se segui questi passaggi, avrai i tuoi dati di chat pronti per l'analisi utilizz
 ## Costi dei Modelli
 
 La seguente tabella mostra i costi aggiornati per vari modelli al 29 giugno 2024. Sia lo script Python che la pagina HTML si basano su questa tabella. Puoi verificare i prezzi dei modelli OpenAI, Claude e Gemini utilizzando i seguenti link:
-- [Prezzi OpenAI](https://openai.com/pricing)
-- [Prezzi Claude](https://www.anthropic.com/product#pricing)
-- [Prezzi Gemini](https://www.deepmind.com/gemini#pricing)
+- [Prezzi OpenAI](https://openai.com/api/pricing/)
+- [Prezzi Claude](https://www.anthropic.com/pricing#anthropic-api)
+- [Prezzi Gemini](https://ai.google.dev/pricing)
 
 I costi per i modelli Claude e Gemini sono sperimentali in quanto si prevede che funzionino in modo simile ai modelli GPT in termini di calcolo dei token. Tuttavia, mi riservo di verificare ulteriormente questi costi.
 
