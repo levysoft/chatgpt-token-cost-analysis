@@ -1,5 +1,10 @@
 # Changelog
 
+## [v1.0.6] - 2024-07-02
+#### Added
+- Experimental pricing information for Claude models
+- Experimental pricing information for Gemini models
+- 
 ## [v1.0.5] - 2024-07-02
 #### Added
 - Implemented JSON format validation to ensure the uploaded file adheres to the required structure.
