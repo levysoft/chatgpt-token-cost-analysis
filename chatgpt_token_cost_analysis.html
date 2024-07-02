@@ -149,25 +149,25 @@
 
         <label for="modelSelect">Select the model*:</label>
         <select id="modelSelect">
-                <optgroup label="GPT-4o Models">
+                <optgroup label="OpenAI GPT-4o Models">
                     <option value="gpt-4o">gpt-4o (5.00 USD / 1M input tokens, 15.00 USD / 1M output tokens)</option>
                     <option value="gpt-4o-2024-05-13">gpt-4o-2024-05-13 (5.00 USD / 1M input tokens, 15.00 USD / 1M output tokens)</option>
                 </optgroup>
-                <optgroup label="GPT-3.5 Turbo Models">
+                <optgroup label="OpenAI GPT-3.5 Turbo Models">
                     <option value="gpt-3.5-turbo-0125">gpt-3.5-turbo-0125 (0.50 USD / 1M input tokens, 1.50 USD / 1M output tokens)</option>
                     <option value="gpt-3.5-turbo-instruct">gpt-3.5-turbo-instruct (1.50 USD / 1M input tokens, 2.00 USD / 1M output tokens)</option>
                 </optgroup>
-                <optgroup label="Embedding Models">
+                <optgroup label="OpenAI Embedding Models">
                     <option value="text-embedding-3-small">text-embedding-3-small (0.02 USD / 1M tokens)</option>
                     <option value="text-embedding-3-large">text-embedding-3-large (0.13 USD / 1M tokens)</option>
                     <option value="ada-v2">ada-v2 (0.10 USD / 1M tokens)</option>
                 </optgroup>
-                <optgroup label="Fine-tuning Models">
+                <optgroup label="OpenAI Fine-tuning Models">
                     <option value="gpt-3.5-turbo">gpt-3.5-turbo (3.00 USD / 1M input tokens, 6.00 USD / 1M output tokens)</option>
                     <option value="davinci-002">davinci-002 (12.00 USD / 1M input tokens, 12.00 USD / 1M output tokens)</option>
                     <option value="babbage-002">babbage-002 (1.60 USD / 1M input tokens, 1.60 USD / 1M output tokens)</option>
                 </optgroup>
-                <optgroup label="Older Models">
+                <optgroup label="OpenAI Older Models">
                     <option value="gpt-4-turbo">gpt-4-turbo (10.00 USD / 1M input tokens, 30.00 USD / 1M output tokens)</option>
                     <option value="gpt-4-turbo-2024-04-09">gpt-4-turbo-2024-04-09 (10.00 USD / 1M input tokens, 30.00 USD / 1M output tokens)</option>
                     <option value="gpt-4">gpt-4 (30.00 USD / 1M input tokens, 60.00 USD / 1M output tokens)</option>
@@ -182,6 +182,19 @@
                     <option value="davinci-002">davinci-002 (2.00 USD / 1M input tokens, 2.00 USD / 1M output tokens)</option>
                     <option value="babbage-002">babbage-002 (0.40 USD / 1M input tokens, 0.40 USD / 1M output tokens)</option>
                 </optgroup>
+				<optgroup label="Claude Models (Experimental)">
+					<option value="claude-3-haiku">Claude 3 Haiku (0.25 USD / 1M input tokens, 1.25 USD / 1M output tokens)</option>
+					<option value="claude-3-sonnet">Claude 3 Sonnet (3.00 USD / 1M input tokens, 15.00 USD / 1M output tokens)</option>
+					<option value="claude-3-opus">Claude 3 Opus (15.00 USD / 1M input tokens, 75.00 USD / 1M output tokens)</option>
+					<option value="claude-2-1">Claude 2.1 (8.00 USD / 1M input tokens, 24.00 USD / 1M output tokens)</option>
+					<option value="claude-2-0">Claude 2.0 (8.00 USD / 1M input tokens, 24.00 USD / 1M output tokens)</option>
+					<option value="claude-instant">Claude Instant (0.80 USD / 1M input tokens, 2.40 USD / 1M output tokens)</option>
+				</optgroup>
+				<optgroup label="Gemini Models (Experimental)">
+					<option value="gemini-1-5-flash">Gemini 1.5 Flash (0.35 USD / 1M input tokens, 1.05 USD / 1M output tokens)</option>
+					<option value="gemini-1-5-pro">Gemini 1.5 Pro (3.50 USD / 1M input tokens, 10.50 USD / 1M output tokens)</option>
+					<option value="gemini-1-0-pro">Gemini 1.0 Pro (0.50 USD / 1M input tokens, 1.50 USD / 1M output tokens)</option>
+				</optgroup>
             </select>
 
             <div class="checkbox-container">
@@ -240,7 +253,16 @@
             "gpt-3.5-turbo-16k-0613": { input: 3.0, output: 4.0 },
             "gpt-3.5-turbo-0301": { input: 1.5, output: 2.0 },
             "davinci-002": { input: 2.0, output: 2.0 },
-            "babbage-002": { input: 0.4, output: 0.4 }            
+            "babbage-002": { input: 0.4, output: 0.4 },
+			"claude-3-haiku": { input: 0.25, output: 1.25 },
+			"claude-3-sonnet": { input: 3.0, output: 15.0 },
+			"claude-3-opus": { input: 15.0, output: 75.0 },
+			"claude-2-1": { input: 8.0, output: 24.0 },
+			"claude-2-0": { input: 8.0, output: 24.0 },
+			"claude-instant": { input: 0.8, output: 2.4 },
+			"gemini-1-5-flash": { input: 0.35, output: 1.05 },
+			"gemini-1-5-pro": { input: 3.5, output: 10.5 },
+			"gemini-1-0-pro": { input: 0.5, output: 1.5 }
         };
 
         const debugEl = document.getElementById('debug');
