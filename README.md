@@ -187,6 +187,49 @@ For more details you can visit the [How do I export my ChatGPT history and data?
 
 If you follow these steps, you will have your chat data ready for analysis using our Python script or HTML page.
 
+## Model Costs
+
+The following table shows the updated costs for various models as of June 29, 2024. Both the Python script and the HTML page are based on this table. You can verify the prices for OpenAI, Claude, and Gemini models using the following links:
+- [OpenAI Pricing](https://openai.com/pricing)
+- [Claude Pricing](https://www.anthropic.com/product#pricing)
+- [Gemini Pricing](https://www.deepmind.com/gemini#pricing)
+
+The costs for Claude and Gemini models are experimental as they are expected to function similarly to GPT models in terms of token calculation. However, I reserve the right to verify these costs further.
+
+| Gruppo                            | Modello                      | Costo input (USD / 1M token) | Costo output (USD / 1M token) |
+|-----------------------------------|------------------------------|------------------------------|-------------------------------|
+| **OpenAI GPT-4o Models**          | gpt-4o                       | 5.00                         | 15.00                         |
+|                                   | gpt-4o-2024-05-13            | 5.00                         | 15.00                         |
+| **OpenAI GPT-3.5 Turbo Models**   | gpt-3.5-turbo-0125           | 0.50                         | 1.50                          |
+|                                   | gpt-3.5-turbo-instruct       | 1.50                         | 2.00                          |
+| **OpenAI Embedding Models**       | text-embedding-3-small       | 0.02                         | N/A                           |
+|                                   | text-embedding-3-large       | 0.13                         | N/A                           |
+|                                   | ada-v2                       | 0.10                         | N/A                           |
+| **OpenAI Fine-tuning Models**     | gpt-3.5-turbo                | 3.00                         | 6.00                          |
+|                                   | davinci-002                  | 12.00                        | 12.00                         |
+|                                   | babbage-002                  | 1.60                         | 1.60                          |
+| **OpenAI Older Models**           | gpt-4-turbo                  | 10.00                        | 30.00                         |
+|                                   | gpt-4-turbo-2024-04-09       | 10.00                        | 30.00                         |
+|                                   | gpt-4                        | 30.00                        | 60.00                         |
+|                                   | gpt-4-32k                    | 60.00                        | 120.00                        |
+|                                   | gpt-4-0125-preview           | 10.00                        | 30.00                         |
+|                                   | gpt-4-1106-preview           | 10.00                        | 30.00                         |
+|                                   | gpt-4-vision-preview         | 10.00                        | 30.00                         |
+|                                   | gpt-3.5-turbo-1106           | 1.00                         | 2.00                          |
+|                                   | gpt-3.5-turbo-0613           | 1.50                         | 2.00                          |
+|                                   | gpt-3.5-turbo-16k-0613       | 3.00                         | 4.00                          |
+|                                   | gpt-3.5-turbo-0301           | 1.50                         | 2.00                          |
+|                                   | davinci-002                  | 2.00                         | 2.00                          |
+|                                   | babbage-002                  | 0.40                         | 0.40                          |
+| **Claude Models (Experimental)**  | Claude 3 Haiku               | 0.25                         | 1.25                          |
+|                                   | Claude 3 Sonnet              | 3.00                         | 15.00                         |
+|                                   | Claude 3 Opus                | 15.00                        | 75.00                         |
+|                                   | Claude 2.1                   | 8.00                         | 24.00                         |
+|                                   | Claude 2.0                   | 8.00                         | 24.00                         |
+|                                   | Claude Instant               | 0.80                         | 2.40                          |
+| **Gemini Models (Experimental)**  | Gemini 1.5 Flash             | 0.35                         | 1.05                          |
+|                                   | Gemini 1.5 Pro               | 3.50                         | 10.50                         |
+|                                   | Gemini 1.0 Pro               | 0.50                         | 1.50                          |
 
 ## Feedback and Contributions
 
