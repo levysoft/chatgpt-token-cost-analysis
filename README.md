@@ -119,7 +119,7 @@ In addition to the Python script, this repository includes a single-page HTML + 
 ### Using the HTML Page
 
 1. **Download the Page**: Click the download link on the page to save it for offline use.
-2. **Select the Model**: Choose the appropriate model from the dropdown menu.
+2. **Select the Model**: Choose the appropriate model from the dropdown menu. You can select from all available OpenAI models and, experimentally, from Claude and Gemini models.
 3. **Upload Your JSON File**: Select your `conversations.json` file to analyze. Implemented JSON format validation to ensure the uploaded file adheres to the required structure.
 4. **View Results**: The analysis results, including total and monthly costs, will be displayed directly on the page.
 
@@ -189,7 +189,7 @@ If you follow these steps, you will have your chat data ready for analysis using
 
 ## Model Costs
 
-The following table shows the updated costs for various models as of June 29, 2024. Both the Python script and the HTML page are based on this table. You can verify the prices for OpenAI, Claude, and Gemini models using the following links:
+The following table shows the updated costs for various models as of June 29, 2024. The HTML page is based on this table. You can verify the prices for OpenAI, Claude, and Gemini models using the following links:
 - [OpenAI Pricing](https://openai.com/api/pricing/)
 - [Claude Pricing](https://www.anthropic.com/pricing#anthropic-api)
 - [Gemini Pricing](https://ai.google.dev/pricing)
