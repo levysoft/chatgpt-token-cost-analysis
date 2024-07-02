@@ -197,7 +197,7 @@ I costi per i modelli Claude e Gemini sono sperimentali in quanto si prevede che
 
 | Gruppo                            | Modello                      | Costo input (USD / 1M token) | Costo output (USD / 1M token) |
 |-----------------------------------|------------------------------|------------------------------|-------------------------------|
-| **Modelli OpenAI GPT-4o**         | gpt-4o                       | 5.00                         | 15.00                         |
+| **Modello OpenAI GPT-4o**         | gpt-4o                       | 5.00                         | 15.00                         |
 |                                   | gpt-4o-2024-05-13            | 5.00                         | 15.00                         |
 | **Modelli OpenAI GPT-3.5 Turbo**  | gpt-3.5-turbo-0125           | 0.50                         | 1.50                          |
 |                                   | gpt-3.5-turbo-instruct       | 1.50                         | 2.00                          |
