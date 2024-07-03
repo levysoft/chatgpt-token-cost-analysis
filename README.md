@@ -231,6 +231,10 @@ The costs for Claude and Gemini models are experimental as they are expected to 
 |                                   | Gemini 1.5 Pro               | 3.50                         | 10.50                         |
 |                                   | Gemini 1.0 Pro               | 0.50                         | 1.50                          |
 
+## Project Purpose and Disclaimer
+
+The purpose of this project is purely indicative and is meant to satisfy personal curiosity. It should not be considered an official or definitive tool. It is important to use it with an understanding of its limitations and not rely on it for critical or professional decisions.
+
 ## Feedback and Contributions
 
 Your feedback is highly appreciated! If you have suggestions, bugs to report, or improvements, feel free to open an issue or a pull request in the GitHub repository. If you would like to contribute to the project, pull requests are welcome.
