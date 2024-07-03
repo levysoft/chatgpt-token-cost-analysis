@@ -5,6 +5,24 @@
  
 Questa repository fornisce strumenti per analizzare i costi associati ai token generati dalle chat esportate di ChatGPT. Include sia uno script Python che una versione HTML per un utilizzo flessibile e migliorato dal punto di vista della privacy.
 
+# Contenuti
+
+1. [Introduzione](#introduzione)
+2. [Script Python](#script-python)
+3. [Requisiti](#requisiti)
+4. [Installazione](#installazione)
+5. [Utilizzo](#utilizzo)
+6. [Descrizione dello script](#descrizione-dello-script)
+7. [Esempio di output](#esempio-di-output)
+8. [Versione web-based in HTML + JavaScript](#versione-web-based-in-html--javascript)
+9. [Come esportare la cronologia e i dati di ChatGPT](#come-esportare-la-cronologia-e-i-dati-di-chatgpt)
+10. [Costi dei modelli](#costi-dei-modelli)
+11. [Scopo del progetto e disclaimer](#scopo-del-progetto-e-disclaimer)
+12. [Feedback e contributi](#feedback-e-contributi)
+13. [Changelog](#changelog)
+14. [Autore](#autore)
+15. [Licenza](#licenza)
+
 ## Introduzione
 
 La repository contiene:
