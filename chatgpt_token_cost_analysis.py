@@ -3,7 +3,7 @@ import pandas as pd
 from datetime import datetime
 import tiktoken
 
-# Prices per token
+# Prices per token for the GPT-4o model
 cost_per_million_input_tokens = 5.00
 cost_per_million_output_tokens = 15.00
 
@@ -71,7 +71,7 @@ print(f"Total Output Tokens: {total_output_tokens}")
 
 # Group by month
 df['month'] = df['timestamp'].dt.to_period('M')
-cost_per_month = df.groupby('month')[['input_cost', 'output_cost', 'input_tokens', 'output_tokens', 'cost']].sum().reset_index()
+cost_per_month = df.groupby('month')[['input_tokens', 'output_tokens', 'input_cost', 'output_cost', 'cost']].sum().reset_index()
 
 # Sort results in descending order to show the most recent months first.
 # Using ascending=False will sort from most recent to oldest.
