@@ -4,7 +4,8 @@
 #### Added
 - Experimental pricing information for Claude models
 - Experimental pricing information for Gemini models
-- 
+- Added a detailed table of contents to the `README.md` for easier navigation.
+
 ## [v1.0.5] - 2024-07-02
 #### Added
 - Implemented JSON format validation to ensure the uploaded file adheres to the required structure.
