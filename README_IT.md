@@ -230,6 +230,9 @@ I costi per i modelli Claude e Gemini sono sperimentali in quanto si prevede che
 |                                   | Gemini 1.5 Pro               | 3.50                         | 10.50                         |
 |                                   | Gemini 1.0 Pro               | 0.50                         | 1.50                          |
 
+## Scopo del Progetto e Disclaimer
+
+Lo scopo di questo progetto è puramente indicativo ed è pensato per soddisfare la curiosità personale. Non deve essere considerato uno strumento ufficiale o definitivo. È fondamentale utilizzarlo con consapevolezza dei suoi limiti e non fare affidamento su di esso per decisioni critiche o professionali.
 
 ## Feedback e Contributi
 
