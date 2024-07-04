@@ -169,6 +169,10 @@ Puoi sempre scaricare la pagina HTML e usarla localmente e offline. Per fare ci√
 
 Ecco uno screenshot della pagina web:
 
+![Web Page Screenshot](assets/screenshot0.jpg)
+
+E qui uno screenshot della pagina dei risultati una volta analizzato il JSON:
+
 ![Web Page Screenshot](assets/screenshot1.jpg)
 
 Assicurati di scaricare la pagina e usarla offline per massima privacy e sicurezza.
