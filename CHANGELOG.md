@@ -1,6 +1,6 @@
 # Changelog
 
-## [v1.0.6] - 2024-07-03
+## [v1.0.6] - 2024-07-04
 #### Added
 - Experimental pricing information for Claude models
 - Experimental pricing information for Gemini models
