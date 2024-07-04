@@ -170,6 +170,10 @@ You can always always download the HTML page and use it locally and offline. To 
 
 Here is a screenshot of the web page:
 
+![Web Page Screenshot](assets/screenshot0.jpg)
+
+And here is a screenshot of the results page after analyzing the JSON:
+
 ![Web Page Screenshot](assets/screenshot1.jpg)
 
 Make sure to download the page and use it offline for maximum privacy and security.
