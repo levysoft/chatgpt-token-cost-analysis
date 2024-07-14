@@ -2,6 +2,8 @@
 
 ![GitHub release (latest by date)](https://img.shields.io/github/v/release/levysoft/chatgpt-token-cost-analysis?label=latest) [![Github All Releases](https://img.shields.io/github/downloads/levysoft/chatgpt-token-cost-analysis/total.svg)]()
  [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) [![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://github.com/levysoft/chatgpt-token-cost-analysis/graphs/commit-activity) [![GitHub contributors](https://img.shields.io/github/contributors/levysoft/chatgpt-token-cost-analysis.svg)](https://github.com/levysoft/chatgpt-token-cost-analysis/graphs/contributors/) [![made-with-javascript](https://img.shields.io/badge/Made%20with-JavaScript-1f425f.svg)](https://www.javascript.com) [![made-with-python](https://img.shields.io/badge/Made%20with-Python-1f425f.svg)](https://www.python.org/) ![X (formerly Twitter) Follow](https://img.shields.io/twitter/follow/levysoft)
+
+[ [English](README.md) | [Italiano](README.it.md) ]
  
 Questa repository fornisce strumenti per analizzare i costi associati ai token generati dalle chat esportate di ChatGPT. Include sia uno script Python che una versione HTML per un utilizzo flessibile e migliorato dal punto di vista della privacy.
 
