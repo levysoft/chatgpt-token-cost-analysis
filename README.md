@@ -224,6 +224,7 @@ The costs for Claude and Gemini models are experimental as they are expected to 
 |-----------------------------------|------------------------------|------------------------------|-------------------------------|
 | **OpenAI GPT-4o Model**           | gpt-4o                       | 5.00                         | 15.00                         |
 |                                   | gpt-4o-2024-05-13            | 5.00                         | 15.00                         |
+|                                   | gpt-4o-2024-08-06            | 2.50                         | 10.00                         |
 | **OpenAI GPT-4o mini Model**      | gpt-4o-mini                  | 0.15                         | 0.60                          |
 |                                   | gpt-4o-mini-2024-07-18       | 0.15                         | 0.60                          |
 | **OpenAI GPT-3.5 Turbo Models**   | gpt-3.5-turbo-0125           | 0.50                         | 1.50                          |
