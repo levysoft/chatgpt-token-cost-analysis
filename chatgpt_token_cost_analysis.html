@@ -149,64 +149,54 @@
 
         <label for="modelSelect">Select the model*:</label>
         <select id="modelSelect">
-                <optgroup label="OpenAI GPT-4o Models">
-                    <option value="gpt-4o">gpt-4o (5.00 USD / 1M input tokens, 15.00 USD / 1M output tokens)</option>
-                    <option value="gpt-4o-2024-05-13">gpt-4o-2024-05-13 (5.00 USD / 1M input tokens, 15.00 USD / 1M output tokens)</option>
-                    <option value="gpt-4o-2024-08-06">gpt-4o-2024-08-06 (2.50 USD / 1M input tokens, 10.00 USD / 1M output tokens)</option>
+                <optgroup label="OpenAI Ox Reasoning Models">
+                    <option value="o3-mini">o3-mini (1.10 USD / 1M input tokens, 4.40 USD / 1M output tokens)</option>
+                    <option value="o1">o1 (15.00 USD / 1M input tokens, 60.00 USD / 1M output tokens)</option>
+                    <option value="o1-mini">o1-mini (1.10 USD / 1M input tokens, 4.40 USD / 1M output tokens)</option>
                 </optgroup>
-                <optgroup label="OpenAI GPT-4o mini Models">
+                <optgroup label="OpenAI GPT-4x Models">
+                    <option value="gpt-4.5">gpt-4.5 (75.00 USD / 1M input tokens, 150.00 USD / 1M output tokens)</option>
+                    <option value="gpt-4o">gpt-4o (2.50 USD / 1M input tokens, 10.00 USD / 1M output tokens)</option>
                     <option value="gpt-4o-mini">gpt-4o-mini (0.15 USD / 1M input tokens, 0.60 USD / 1M output tokens)</option>
-                    <option value="gpt-4o-mini-2024-07-18">gpt-4o-mini-2024-07-18 (0.15 USD / 1M input tokens, 0.60 USD / 1M output tokens)</option>
-                </optgroup>
-                <optgroup label="OpenAI o1-preview Models">
-                    <option value="o1-preview">o1-preview (15.00 USD / 1M input tokens, 60.00 USD / 1M output tokens)</option>
-                    <option value="o1-preview-2024-09-12">o1-preview-2024-09-12 (15.00 USD / 1M input tokens, 60.00 USD / 1M output tokens)</option>
-                </optgroup>
-		<optgroup label="OpenAI o1-mini Models">
-                    <option value="o1-mini">o1-mini (3.00 USD / 1M input tokens, 12.00 USD / 1M output tokens)</option>
-                    <option value="o1-mini-2024-09-12">o1-mini-2024-09-12 (3.00 USD / 1M input tokens, 12.00 USD / 1M output tokens)</option>
-                </optgroup>
-                <optgroup label="OpenAI GPT-3.5 Turbo Models">
-                    <option value="gpt-3.5-turbo-0125">gpt-3.5-turbo-0125 (0.50 USD / 1M input tokens, 1.50 USD / 1M output tokens)</option>
-                    <option value="gpt-3.5-turbo-instruct">gpt-3.5-turbo-instruct (1.50 USD / 1M input tokens, 2.00 USD / 1M output tokens)</option>
                 </optgroup>
                 <optgroup label="OpenAI Embedding Models">
                     <option value="text-embedding-3-small">text-embedding-3-small (0.02 USD / 1M tokens)</option>
                     <option value="text-embedding-3-large">text-embedding-3-large (0.13 USD / 1M tokens)</option>
-                    <option value="ada-v2">ada-v2 (0.10 USD / 1M tokens)</option>
+                    <option value="text-embedding-ada-002">text-embedding-ada-002 (0.10 USD / 1M tokens)</option>
                 </optgroup>
-                <optgroup label="OpenAI Fine-tuning Models">
-                    <option value="gpt-3.5-turbo">gpt-3.5-turbo (3.00 USD / 1M input tokens, 6.00 USD / 1M output tokens)</option>
-                    <option value="davinci-002">davinci-002 (12.00 USD / 1M input tokens, 12.00 USD / 1M output tokens)</option>
-                    <option value="babbage-002">babbage-002 (1.60 USD / 1M input tokens, 1.60 USD / 1M output tokens)</option>
-                </optgroup>
-                <optgroup label="OpenAI Older Models">
-                    <option value="gpt-4-turbo">gpt-4-turbo (10.00 USD / 1M input tokens, 30.00 USD / 1M output tokens)</option>
+                <optgroup label="OpenAI Other Models">
+                    <option value="chatgpt-4o-latest">chatgpt-4o-latest (5.00 USD / 1M input tokens, 15.00 USD / 1M output tokens)</option>
                     <option value="gpt-4-turbo-2024-04-09">gpt-4-turbo-2024-04-09 (10.00 USD / 1M input tokens, 30.00 USD / 1M output tokens)</option>
-                    <option value="gpt-4">gpt-4 (30.00 USD / 1M input tokens, 60.00 USD / 1M output tokens)</option>
-                    <option value="gpt-4-32k">gpt-4-32k (60.00 USD / 1M input tokens, 120.00 USD / 1M output tokens)</option>
                     <option value="gpt-4-0125-preview">gpt-4-0125-preview (10.00 USD / 1M input tokens, 30.00 USD / 1M output tokens)</option>
                     <option value="gpt-4-1106-preview">gpt-4-1106-preview (10.00 USD / 1M input tokens, 30.00 USD / 1M output tokens)</option>
-                    <option value="gpt-4-vision-preview">gpt-4-vision-preview (10.00 USD / 1M input tokens, 30.00 USD / 1M output tokens)</option>
+                    <option value="gpt-4-1106-vision-preview">gpt-4-1106-vision-preview (10.00 USD / 1M input tokens, 30.00 USD / 1M output tokens)</option>
+                    <option value="gpt-4-0613">gpt-4-0613 (30.00 USD / 1M input tokens, 60.00 USD / 1M output tokens)</option>
+                    <option value="gpt-4-0314">gpt-4-0314 (30.00 USD / 1M input tokens, 60.00 USD / 1M output tokens)</option>
+                    <option value="gpt-4-32k">gpt-4-32k (60.00 USD / 1M input tokens, 120.00 USD / 1M output tokens)</option>
+                    <option value="gpt-3.5-turbo-0125">gpt-3.5-turbo-0125 (0.50 USD / 1M input tokens, 1.50 USD / 1M output tokens)</option>
                     <option value="gpt-3.5-turbo-1106">gpt-3.5-turbo-1106 (1.00 USD / 1M input tokens, 2.00 USD / 1M output tokens)</option>
                     <option value="gpt-3.5-turbo-0613">gpt-3.5-turbo-0613 (1.50 USD / 1M input tokens, 2.00 USD / 1M output tokens)</option>
-                    <option value="gpt-3.5-turbo-16k-0613">gpt-3.5-turbo-16k-0613 (3.00 USD / 1M input tokens, 4.00 USD / 1M output tokens)</option>
                     <option value="gpt-3.5-turbo-0301">gpt-3.5-turbo-0301 (1.50 USD / 1M input tokens, 2.00 USD / 1M output tokens)</option>
+                    <option value="gpt-3.5-turbo-instruct">gpt-3.5-turbo-instruct (1.50 USD / 1M input tokens, 2.00 USD / 1M output tokens)</option>
+                    <option value="gpt-3.5-turbo-16k-0613">gpt-3.5-turbo-16k-0613 (3.00 USD / 1M input tokens, 4.00 USD / 1M output tokens)</option>
                     <option value="davinci-002">davinci-002 (2.00 USD / 1M input tokens, 2.00 USD / 1M output tokens)</option>
                     <option value="babbage-002">babbage-002 (0.40 USD / 1M input tokens, 0.40 USD / 1M output tokens)</option>
                 </optgroup>
-		<optgroup label="Claude Models (Experimental)">
-                    <option value="claude-3-haiku">Claude 3 Haiku (0.25 USD / 1M input tokens, 1.25 USD / 1M output tokens)</option>
-                    <option value="claude-3-sonnet">Claude 3 Sonnet (3.00 USD / 1M input tokens, 15.00 USD / 1M output tokens)</option>
+		<optgroup label="Claude Latest Models">
+                    <option value="claude-3-7-sonnet">Claude 3.7 Sonnet (3.00 USD / 1M input tokens, 15.00 USD / 1M output tokens)</option>
+                    <option value="claude-3-5-haiku">Claude 3.5 Haiku (0.80 USD / 1M input tokens, 4.00 USD / 1M output tokens)</option>
                     <option value="claude-3-opus">Claude 3 Opus (15.00 USD / 1M input tokens, 75.00 USD / 1M output tokens)</option>
-                    <option value="claude-2-1">Claude 2.1 (8.00 USD / 1M input tokens, 24.00 USD / 1M output tokens)</option>
-                    <option value="claude-2-0">Claude 2.0 (8.00 USD / 1M input tokens, 24.00 USD / 1M output tokens)</option>
-                    <option value="claude-instant">Claude Instant (0.80 USD / 1M input tokens, 2.40 USD / 1M output tokens)</option>
 		</optgroup>
-		<optgroup label="Gemini Models (Experimental)">
-                    <option value="gemini-1-5-flash">Gemini 1.5 Flash (0.35 USD / 1M input tokens, 1.05 USD / 1M output tokens)</option>
-                    <option value="gemini-1-5-pro">Gemini 1.5 Pro (3.50 USD / 1M input tokens, 10.50 USD / 1M output tokens)</option>
-                    <option value="gemini-1-0-pro">Gemini 1.0 Pro (0.50 USD / 1M input tokens, 1.50 USD / 1M output tokens)</option>
+		<optgroup label="Claude Legacy Models">
+                    <option value="claude-3-5-sonnet">Claude 3.5 Sonnet (3.00 USD / 1M input tokens, 15.00 USD / 1M output tokens)</option>
+                    <option value="claude-3-haiku">Claude 3 Haiku (0.25 USD / 1M input tokens, 1.25 USD / 1M output tokens)</option>
+		</optgroup>
+		<optgroup label="Gemini Models">
+                    <option value="gemini-2-0-flash">Gemini 2.0 Flash (0.10 USD / 1M input tokens, 0.40 USD / 1M output tokens)</option>
+                    <option value="gemini-2-0-flash-lite">Gemini 2.0 Flash-Lite (0.075 USD / 1M input tokens, 0.30 USD / 1M output tokens)</option>
+                    <option value="gemini-1-5-flash">Gemini 1.5 Flash (0.075 USD / 1M input tokens, 0.30 USD / 1M output tokens)</option>
+                    <option value="gemini-1-5-flash-8b">Gemini 1.5 Flash-8B (0.0375 USD / 1M input tokens, 0.15 USD / 1M output tokens)</option>
+                    <option value="gemini-1-5-pro">Gemini 1.5 Pro (1.25 USD / 1M input tokens, 5.00 USD / 1M output tokens)</option>
 		</optgroup>
             </select>
 
@@ -244,45 +234,41 @@
 
     <script>
         const pricing = {
-            "gpt-4o": { input: 5.0, output: 15.0 },
-            "gpt-4o-2024-05-13": { input: 5.0, output: 15.0 },
-            "gpt-4o-2024-08-06": { input: 2.5, output: 10.0 },
+            "o3-mini": { input: 1.10, output: 4.40 },
+            "o1": { input: 15.00, output: 60.00 },
+            "o1-mini": { input: 1.10, output: 4.40 },
+            "gpt-4.5": { input: 75.0, output: 150.0 },
+            "gpt-4o": { input: 2.50, output: 10.0 },
             "gpt-4o-mini": { input: 0.15, output: 0.60 },
-            "gpt-4o-mini-2024-07-18": { input: 0.15, output: 0.60 },
-            "o1-preview": { input: 15.00, output: 60.00 },
-            "o1-preview-2024-09-12": { input: 15.00, output: 60.00 },
-            "o1-mini": { input: 3.00, output: 12.00 },
-            "o1-mini-2024-09-12": { input: 3.00, output: 12.00 },
-            "gpt-3.5-turbo-0125": { input: 0.5, output: 1.5 },
-            "gpt-3.5-turbo-instruct": { input: 1.5, output: 2.0 },
             "text-embedding-3-small": { input: 0.02, output: 0.02 },
             "text-embedding-3-large": { input: 0.13, output: 0.13 },
-            "ada-v2": { input: 0.1, output: 0.1 },
-            "gpt-3.5-turbo": { input: 3.0, output: 6.0 },
-            "davinci-002": { input: 12.0, output: 12.0 },
-            "babbage-002": { input: 1.6, output: 1.6 },
-            "gpt-4-turbo": { input: 10.0, output: 30.0 },
+            "text-embedding-ada-002": { input: 0.10, output: 0.10 },
+            "chatgpt-4o-latest": { input: 5.0, output: 15.0 },
             "gpt-4-turbo-2024-04-09": { input: 10.0, output: 30.0 },
-            "gpt-4": { input: 30.0, output: 60.0 },
-            "gpt-4-32k": { input: 60.0, output: 120.0 },
             "gpt-4-0125-preview": { input: 10.0, output: 30.0 },
             "gpt-4-1106-preview": { input: 10.0, output: 30.0 },
-            "gpt-4-vision-preview": { input: 10.0, output: 30.0 },
+            "gpt-4-1106-vision-preview": { input: 10.0, output: 30.0 },
+            "gpt-4-0613": { input: 30.0, output: 60.0 },
+            "gpt-4-0314": { input: 30.0, output: 60.0 },
+            "gpt-4-32k": { input: 60.0, output: 120.0 },
+            "gpt-3.5-turbo-0125": { input: 0.5, output: 1.5 },
             "gpt-3.5-turbo-1106": { input: 1.0, output: 2.0 },
             "gpt-3.5-turbo-0613": { input: 1.5, output: 2.0 },
-            "gpt-3.5-turbo-16k-0613": { input: 3.0, output: 4.0 },
             "gpt-3.5-turbo-0301": { input: 1.5, output: 2.0 },
+            "gpt-3.5-turbo-instruct": { input: 1.5, output: 2.0 },
+            "gpt-3.5-turbo-16k-0613": { input: 3.0, output: 4.0 },
             "davinci-002": { input: 2.0, output: 2.0 },
             "babbage-002": { input: 0.4, output: 0.4 },
-            "claude-3-haiku": { input: 0.25, output: 1.25 },
-            "claude-3-sonnet": { input: 3.0, output: 15.0 },
+            "claude-3-7-sonnet": { input: 3.0, output: 15.0 },
+            "claude-3-5-haiku": { input: 0.80, output: 4.0 },
             "claude-3-opus": { input: 15.0, output: 75.0 },
-            "claude-2-1": { input: 8.0, output: 24.0 },
-            "claude-2-0": { input: 8.0, output: 24.0 },
-            "claude-instant": { input: 0.8, output: 2.4 },
-            "gemini-1-5-flash": { input: 0.35, output: 1.05 },
-            "gemini-1-5-pro": { input: 3.5, output: 10.5 },
-            "gemini-1-0-pro": { input: 0.5, output: 1.5 }
+            "claude-3-5-sonnet": { input: 3.0, output: 15.0 },
+            "claude-3-haiku": { input: 0.25, output: 1.25 },
+            "gemini-2-0-flash": { input: 0.10, output: 0.40 },
+            "gemini-2-0-flash-lite": { input: 0.075, output: 0.30 },
+            "gemini-1-5-flash": { input: 0.075, output: 0.30 },
+            "gemini-1-5-flash-8b": { input: 0.0375, output: 0.15 },
+            "gemini-1-5-pro": { input: 1.25, output: 5.0 }
         };
 
         const debugEl = document.getElementById('debug');
