@@ -220,47 +220,43 @@ The following table shows the updated costs for various models as of June 29, 20
 
 The costs for Claude and Gemini models are experimental as they are expected to function similarly to GPT models in terms of token calculation. However, I reserve the right to verify these costs further.
 
-| Gruppo                            | Modello                      | Costo input (USD / 1M token) | Costo output (USD / 1M token) |
+| Group                             | Model                        | Input cost (USD / 1M tokens) | Output cost (USD / 1M tokens) |
 |-----------------------------------|------------------------------|------------------------------|-------------------------------|
-| **OpenAI GPT-4o Models**          | gpt-4o                       | 5.00                         | 15.00                         |
-|                                   | gpt-4o-2024-05-13            | 5.00                         | 15.00                         |
-|                                   | gpt-4o-2024-08-06            | 2.50                         | 10.00                         |
-| **OpenAI GPT-4o mini Models**     | gpt-4o-mini                  | 0.15                         | 0.60                          |
-|                                   | gpt-4o-mini-2024-07-18       | 0.15                         | 0.60                          |
-| **OpenAI o1-preview Models**      | o1-preview                   | 15.00                        | 60.00                         |
-|                                   | o1-preview-2024-09-12        | 15.00                        | 60.00                         |
-| **OpenAI o1-mini Models**         | o1-mini                      | 3.00                         | 12.00                         |
-|                                   | o1-mini-2024-09-12           | 3.00                         | 12.00                         |
-| **OpenAI GPT-3.5 Turbo Models**   | gpt-3.5-turbo-0125           | 0.50                         | 1.50                          |
-|                                   | gpt-3.5-turbo-instruct       | 1.50                         | 2.00                          |
+| **OpenAI Ox Reasoning Models**    | o3-mini                      | 1.10                         | 4.40                          |
+|                                   | o1                           | 15.00                        | 60.00                         |
+|                                   | o1-mini                      | 1.10                         | 4.40                          |
+| **OpenAI GPT-4x Models**          | gpt-4.5                      | 75.00                        | 150.00                        |
+|                                   | gpt-4o                       | 2.50                         | 10.00                         |
+|                                   | gpt-4o-mini                  | 0.15                         | 0.60                          |
 | **OpenAI Embedding Models**       | text-embedding-3-small       | 0.02                         | N/A                           |
 |                                   | text-embedding-3-large       | 0.13                         | N/A                           |
-|                                   | ada-v2                       | 0.10                         | N/A                           |
-| **OpenAI Fine-tuning Models**     | gpt-3.5-turbo                | 3.00                         | 6.00                          |
-|                                   | davinci-002                  | 12.00                        | 12.00                         |
-|                                   | babbage-002                  | 1.60                         | 1.60                          |
-| **OpenAI Older Models**           | gpt-4-turbo                  | 10.00                        | 30.00                         |
+|                                   | text-embedding-ada-002       | 0.10                         | N/A                           |
+| **OpenAI Other Models**           | chatgpt-4o-latest            | 5.00                         | 15.00                         |
 |                                   | gpt-4-turbo-2024-04-09       | 10.00                        | 30.00                         |
-|                                   | gpt-4                        | 30.00                        | 60.00                         |
-|                                   | gpt-4-32k                    | 60.00                        | 120.00                        |
 |                                   | gpt-4-0125-preview           | 10.00                        | 30.00                         |
 |                                   | gpt-4-1106-preview           | 10.00                        | 30.00                         |
-|                                   | gpt-4-vision-preview         | 10.00                        | 30.00                         |
+|                                   | gpt-4-1106-vision-preview    | 10.00                        | 30.00                         |
+|                                   | gpt-4-0613                   | 30.00                        | 60.00                         |
+|                                   | gpt-4-0314                   | 30.00                        | 60.00                         |
+|                                   | gpt-4-32k                    | 60.00                        | 120.00                        |
+|                                   | gpt-3.5-turbo-0125           | 0.50                         | 1.50                          |
 |                                   | gpt-3.5-turbo-1106           | 1.00                         | 2.00                          |
 |                                   | gpt-3.5-turbo-0613           | 1.50                         | 2.00                          |
-|                                   | gpt-3.5-turbo-16k-0613       | 3.00                         | 4.00                          |
 |                                   | gpt-3.5-turbo-0301           | 1.50                         | 2.00                          |
+|                                   | gpt-3.5-turbo-instruct       | 1.50                         | 2.00                          |
+|                                   | gpt-3.5-turbo-16k-0613       | 3.00                         | 4.00                          |
 |                                   | davinci-002                  | 2.00                         | 2.00                          |
 |                                   | babbage-002                  | 0.40                         | 0.40                          |
-| **Claude Models (Experimental)**  | Claude 3 Haiku               | 0.25                         | 1.25                          |
-|                                   | Claude 3 Sonnet              | 3.00                         | 15.00                         |
+| **Claude Latest Models**          | Claude 3.7 Sonnet            | 3.00                         | 15.00                         |
+|                                   | Claude 3.5 Haiku             | 0.80                         | 4.00                          |
 |                                   | Claude 3 Opus                | 15.00                        | 75.00                         |
-|                                   | Claude 2.1                   | 8.00                         | 24.00                         |
-|                                   | Claude 2.0                   | 8.00                         | 24.00                         |
-|                                   | Claude Instant               | 0.80                         | 2.40                          |
-| **Gemini Models (Experimental)**  | Gemini 1.5 Flash             | 0.35                         | 1.05                          |
-|                                   | Gemini 1.5 Pro               | 3.50                         | 10.50                         |
-|                                   | Gemini 1.0 Pro               | 0.50                         | 1.50                          |
+| **Claude Legacy Models**          | Claude 3.5 Sonnet            | 3.00                         | 15.00                         |
+|                                   | Claude 3 Haiku               | 0.25                         | 1.25                          |
+| **Gemini Models**                 | Gemini 2.0 Flash             | 0.10                         | 0.40                          |
+|                                   | Gemini 2.0 Flash-Lite        | 0.075                        | 0.30                          |
+|                                   | Gemini 1.5 Flash             | 0.075                        | 0.30                          |
+|                                   | Gemini 1.5 Flash-8B          | 0.0375                       | 0.15                          |
+|                                   | Gemini 1.5 Pro               | 1.25                         | 5.00                          |
 
 ## Project Purpose and Disclaimer
 
