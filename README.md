@@ -247,7 +247,7 @@ The costs for Claude and Gemini models are experimental as they are expected to 
 |                                   | gpt-3.5-turbo-16k-0613       | 3.00                         | 4.00                          |
 |                                   | davinci-002                  | 2.00                         | 2.00                          |
 |                                   | babbage-002                  | 0.40                         | 0.40                          |
-| **Claude Latest Models**          | Claude 3.7 Sonnet            | 3.00                         | 15.00                         |
+| **Claude Models**                 | Claude 3.7 Sonnet            | 3.00                         | 15.00                         |
 |                                   | Claude 3.5 Haiku             | 0.80                         | 4.00                          |
 |                                   | Claude 3 Opus                | 15.00                        | 75.00                         |
 | **Claude Legacy Models**          | Claude 3.5 Sonnet            | 3.00                         | 15.00                         |
